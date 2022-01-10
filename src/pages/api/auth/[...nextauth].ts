@@ -1,3 +1,4 @@
+import { log } from 'console';
 import { query as q } from 'faunadb';
 
 import NextAuth from "next-auth"
@@ -20,8 +21,8 @@ export default NextAuth({
     // ...add more providers here
   ],
   callbacks: {
-    async signIn({ user, account, profile, email, credentials }) {
-      const userEmail = user.email;
+    async signIn({ user, account, profile, credentials }) {
+      const email = user.email;
       
       
       try {
